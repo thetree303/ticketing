@@ -22,13 +22,13 @@ const Register: React.FC = () => {
   } = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema) as any,
     defaultValues: {
-      role: "CUSTOMER",
+      role: "customer",
     },
   });
 
   const onSubmit = async (data: RegisterFormData) => {
     try {
-      const { ...registerData } = data;
+      const { confirmPassword, ...registerData } = data;
       await authService.register(registerData);
       toast.success("Đăng ký thành công! Vui lòng đăng nhập.");
       navigate("/login");
@@ -62,6 +62,30 @@ const Register: React.FC = () => {
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+          {/* Username */}
+          <div>
+            <Label htmlFor="username" className="text-slate-300">
+              Tên đăng nhập
+            </Label>
+            <div className="relative">
+              <User
+                className="absolute top-3 left-4 text-slate-400"
+                size={20}
+              />
+              <Input
+                id="username"
+                {...register("username")}
+                className="mt-2 h-11 border-slate-700 bg-slate-200 pl-12 text-black placeholder-slate-500 focus-visible:ring-lime-500"
+                placeholder="VD: user123"
+              />
+            </div>
+            {errors.username && (
+              <p className="mt-1 text-xs text-red-400">
+                {errors.username.message}
+              </p>
+            )}
+          </div>
+
           {/* Full Name */}
           <div>
             <Label htmlFor="fullName" className="text-slate-300">

@@ -34,12 +34,11 @@ const CreateUserDialog: React.FC<CreateUserDialogProps> = ({
     username: "",
     email: "",
     password: "",
-    confirmPassword: "",
     fullName: "",
     phoneNumber: "",
     role: "customer",
   });
-
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -58,7 +57,7 @@ const CreateUserDialog: React.FC<CreateUserDialogProps> = ({
     e.preventDefault();
     setLoading(true);
 
-    if (formData.password !== formData.confirmPassword) {
+    if (formData.password !== confirmPassword) {
       toast.error("Mật khẩu xác nhận không khớp");
       setLoading(false);
       return;
@@ -73,7 +72,6 @@ const CreateUserDialog: React.FC<CreateUserDialogProps> = ({
         username: "",
         email: "",
         password: "",
-        confirmPassword: "",
         fullName: "",
         phoneNumber: "",
         role: "customer",
@@ -153,10 +151,8 @@ const CreateUserDialog: React.FC<CreateUserDialogProps> = ({
             <Input
               required
               type="password"
-              value={formData.confirmPassword}
-              onChange={(e) =>
-                handleInputChange("confirmPassword", e.target.value)
-              }
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="••••••••"
               disabled={loading}
               autoComplete="new-password"

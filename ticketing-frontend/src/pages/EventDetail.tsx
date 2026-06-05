@@ -52,8 +52,13 @@ const EventDetail: React.FC = () => {
       {/* Background Blur */}
       <div className="relative h-[200px] w-full overflow-hidden lg:hidden">
         <img
-          src={event.bannerUrl}
-          alt="bg"
+          src={
+            event.bannerUrl ||
+            `https://placehold.co/1200x600/68A61C/ffffff?text=${encodeURIComponent(
+              event.title.slice(0, 30),
+            )}`
+          }
+          alt={event.title}
           className="h-full w-full scale-110 object-cover opacity-50 blur-xl"
         />
         <div className="absolute inset-0 bg-linear-to-b from-transparent to-slate-50"></div>

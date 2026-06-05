@@ -12,6 +12,7 @@ import {
   Search,
   Filter,
   CalendarIcon,
+  Plus,
 } from "lucide-react";
 import { toast } from "sonner";
 import {
@@ -27,6 +28,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import StatusBadge from "@/components/StatusBadge";
 import { EVENT_STATUS_BADGE_STYLE } from "@/lib/statusConstant";
+import { Link } from "react-router-dom";
 import {
   Table,
   TableBody,
@@ -59,6 +61,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
 const OrganizerEvents: React.FC = () => {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
@@ -262,8 +265,22 @@ const OrganizerEvents: React.FC = () => {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Sự kiện của tôi</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Quản lý sự kiện</h1>
           <p className="text-slate-500">Quản lý các sự kiện bạn tổ chức</p>
+        </div>
+        <div>
+          <Link
+            key="create-event"
+            to="/organizer/events/create"
+            className={cn(
+              "flex w-full items-center gap-3 rounded-xl bg-lime-600 px-4 py-3 text-sm font-medium text-white shadow-md shadow-lime-200 transition-all duration-200 hover:bg-lime-700",
+            )}
+          >
+            <div className="shrink-0">
+              <Plus size={18} />
+            </div>
+            <span>Tạo sự kiện mới</span>{" "}
+          </Link>
         </div>
       </div>
 

@@ -36,7 +36,7 @@ export class AdminCreateUserDto {
 
   @IsString()
   @IsOptional()
-  @IsPhoneNumberVN()
+  @IsPhoneNumberVN({ message: 'Số điện thoại không hợp lệ' })
   phoneNumber?: string;
 
   @IsString()

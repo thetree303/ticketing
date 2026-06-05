@@ -5,7 +5,6 @@ import {
   CalendarRange,
   Tickets,
   ShoppingCart,
-  Plus,
   ScanLine,
   LogOut,
   ChevronLeft,
@@ -56,7 +55,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ role }) => {
         },
         {
           label: "Quản lý sự kiện",
-          path: "/admin/events",
+          path: "/admin/events/",
           icon: (
             <CalendarRange
               className="h-[18px] w-[18px]"
@@ -119,22 +118,10 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ role }) => {
           ),
         },
         {
-          label: "Sự kiện của tôi",
+          label: "Quản lý sự kiện",
           path: "/organizer/events",
           icon: (
             <CalendarRange
-              className="h-[18px] w-[18px]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            />
-          ),
-        },
-        {
-          label: "Tạo sự kiện",
-          path: "/organizer/create-event",
-          icon: (
-            <Plus
               className="h-[18px] w-[18px]"
               fill="none"
               stroke="currentColor"
@@ -187,8 +174,9 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ role }) => {
   }, [token]);
 
   useEffect(() => {
+    // eslint-disable-next-line
     fetchUserProfile();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [token]);
 
   return (
@@ -207,12 +195,12 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ role }) => {
             <div
               className={`} text-2xl font-bold tracking-tight text-black transition-colors`}
             >
-              TICKE
+              7
             </div>
             <div
               className={`} text-2xl font-black tracking-tight text-lime-600 transition-colors`}
             >
-              TEST
+              EVENTS
             </div>
           </div>
 
@@ -267,14 +255,14 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ role }) => {
             {!isCollapsed && (
               <div className="flex items-baseline">
                 <div
-                  className={`} text-2xl font-bold tracking-tight text-black transition-colors`}
-                >
-                  TICKE
-                </div>
-                <div
                   className={`} text-2xl font-black tracking-tight text-lime-600 transition-colors`}
                 >
-                  TEST
+                  7AE
+                </div>
+                <div
+                  className={`} text-2xl font-bold tracking-tight text-black transition-colors`}
+                >
+                  VENTS
                 </div>
               </div>
             )}

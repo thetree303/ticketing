@@ -91,14 +91,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 />
               </div>
               <div
-                className={`} text-2xl font-bold tracking-tight text-black transition-colors`}
-              >
-                TICKE
-              </div>
-              <div
                 className={`} text-2xl font-black tracking-tight text-lime-600 transition-colors`}
               >
-                TEST
+                7AE
+              </div>
+              <div
+                className={`} text-2xl font-bold tracking-tight text-black transition-colors`}
+              >
+                VENTS
               </div>
             </Link>
 
@@ -201,21 +201,21 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </header>
 
       {/* Main Content: pt-20 để đẩy nội dung xuống dưới Header cố định */}
-      <main className="flex-grow pt-20">{children}</main>
+      <main className="grow pt-20">{children}</main>
 
       {/* Footer */}
       <footer className="border-t border-slate-800 bg-slate-900 py-12 text-slate-300">
         <div className="container mx-auto px-4 text-center">
           <div className="mb-4 flex items-center justify-center gap-2 text-white">
             <Ticket className="h-6 w-6" />
-            <span className="text-xl font-bold">TICKETEST</span>
+            <span className="text-xl font-bold">7AEVENTS</span>
           </div>
           <p className="mx-auto mb-8 max-w-md text-sm text-slate-400">
-            Nền tảng đặt vé sự kiện trực tuyến. <br /> Kết nối đam mê, lan tỏa
+            Nền tảng quản lý sự kiện trực tuyến. <br /> Kết nối đam mê, lan tỏa
             cảm xúc.
           </p>
           <div className="border-t border-slate-800 pt-8 text-xs text-slate-500">
-            Copyright © {new Date().getFullYear()} TICKETEST
+            Copyright © {new Date().getFullYear()} 7AEvents
           </div>
         </div>
       </footer>

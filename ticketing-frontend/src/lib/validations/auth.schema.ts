@@ -22,6 +22,13 @@ export type LoginFormData = z.infer<typeof loginSchema>;
 // Register Schema
 export const registerSchema = z
   .object({
+    username: z
+      .string()
+      .min(3, "Tên đăng nhập phải có ít nhất 3 ký tự")
+      .regex(
+        /^[a-zA-Z0-9_]+$/,
+        "Tên đăng nhập chỉ chứa chữ cái, số và dấu gạch dưới",
+      ),
     email: z.string().min(1, "Email là bắt buộc").email("Email không hợp lệ"),
     password: z
       .string()
@@ -40,7 +47,7 @@ export const registerSchema = z
       .regex(/^[0-9]{10,11}$/, "Số điện thoại phải có 10-11 chữ số")
       .optional()
       .or(z.literal("")),
-    role: z.literal("CUSTOMER").or(z.literal("ORGANIZER")).default("CUSTOMER"),
+    role: z.literal("customer").or(z.literal("organizer")).default("customer"),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Mật khẩu xác nhận không khớp",

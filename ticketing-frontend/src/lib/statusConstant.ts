@@ -62,7 +62,7 @@ export const USER_ROLE_BADGE_STYLE: Record<
   UserRole,
   { color: string; label: string }
 > = {
-  customer: { color: "blue", label: "Khách hàng" },
-  organizer: { color: "violet", label: "Nhà tổ chức" },
+  customer: { color: "lime", label: "Khách hàng" },
+  organizer: { color: "amber", label: "Nhà tổ chức" },
   admin: { color: "red", label: "Quản trị viên" },
 };

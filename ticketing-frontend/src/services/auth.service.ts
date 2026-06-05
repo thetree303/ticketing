@@ -7,11 +7,12 @@ export interface LoginRequest {
 }
 
 export interface RegisterRequest {
+  username: string;
   email: string;
   password: string;
   fullName: string;
   phoneNumber?: string;
-  role: "CUSTOMER" | "ORGANIZER";
+  role: "customer" | "organizer";
 }
 
 export interface ChangePasswordRequest {

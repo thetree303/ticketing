@@ -267,7 +267,7 @@ const TicketPDF: React.FC<TicketPDFProps> = ({ ticket, qrCodeDataUrl }) => {
         <View style={styles.header}>
           <View style={styles.logo}>
             <TicketIcon />
-            <Text style={styles.logoText}>TICKETEST</Text>
+            <Text style={styles.logoText}>7AEVENTS</Text>
           </View>
           <Text style={styles.eventTitle}>{ticket.event.title}</Text>
           <Text style={styles.ticketType}>{ticket.ticketType.name}</Text>
@@ -385,11 +385,11 @@ const TicketPDF: React.FC<TicketPDFProps> = ({ ticket, qrCodeDataUrl }) => {
         {/* Footer */}
         <View style={styles.footer}>
           <Text style={styles.footerText}>
-            Vé này được phát hành bởi TICKETEST. Mọi thắc mắc vui lòng liên hệ
-            support@ticketest.com
+            Vé này được phát hành bởi 7AEVENTS. Mọi thắc mắc vui lòng liên hệ
+            support@7aevents.com
           </Text>
           <Text style={{ ...styles.footerText, marginTop: 4 }}>
-            Copyright © {new Date().getFullYear()} TICKETEST. All rights
+            Copyright © {new Date().getFullYear()} 7AEVENTS. All rights
             reserved.
           </Text>
         </View>

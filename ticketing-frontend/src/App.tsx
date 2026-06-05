@@ -165,7 +165,7 @@ function App() {
           <Route index element={<Navigate to="overview" replace />} />
           <Route path="overview" element={<OrganizerOverview />} />
           <Route path="events" element={<OrganizerEvents />} />
-          <Route path="create-event" element={<OrganizerCreateEvent />} />
+          <Route path="events/create" element={<OrganizerCreateEvent />} />
           <Route path="checkin" element={<OrganizerCheckIn />} />
         </Route>
 

@@ -60,6 +60,7 @@ const Home: React.FC = () => {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line
     fetchCategories();
     fetchEvents();
   }, []);
@@ -111,13 +112,6 @@ const Home: React.FC = () => {
         <div className="relative z-10 container mx-auto px-4 py-20">
           {" "}
           <div className="animate-fade-in max-w-2xl">
-            <Badge
-              className="mb-6 border-lime-900/90 bg-linear-to-r from-lime-600/80 to-lime-600/65 px-4 py-2 text-white uppercase shadow-lg backdrop-blur-md transition-colors duration-300 hover:from-lime-700/80 hover:to-lime-700/60"
-              variant={"outline"}
-            >
-              Nền tảng bán vé hàng đầu
-            </Badge>
-
             <h1 className="mb-6 text-5xl leading-tight font-extrabold md:text-7xl">
               <span className="text-white drop-shadow-2xl">Sống trọn từng</span>
               <br />
@@ -127,8 +121,8 @@ const Home: React.FC = () => {
             </h1>
 
             <p className="mb-10 max-w-lg text-xl leading-relaxed text-slate-200 drop-shadow-lg">
-              Khám phá và đặt vé cho những sự kiện âm nhạc, hội thảo và giải trí
-              đỉnh cao nhất ngay hôm nay.
+              Khám phá những sự kiện âm nhạc, hội thảo và giải trí đỉnh cao nhất
+              ngay hôm nay!
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -270,11 +264,11 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">
-              Tại sao chọn TICKETEST?
+              Tại sao chọn 7AEvents?
             </h2>
             <p className="mx-auto max-w-2xl text-slate-600">
-              Chúng tôi mang đến trải nghiệm mua vé mượt mà, an toàn và nhanh
-              chóng nhất.
+              Chúng tôi mang đến trải nghiệm mượt mà, an toàn và nhanh chóng
+              nhất.
             </p>
           </div>
 
